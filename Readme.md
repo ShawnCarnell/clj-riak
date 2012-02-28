@@ -2,21 +2,13 @@
 
 Clojure bindings to the [Riak](http://www.basho.com/Riak.html) [Protocol Buffers API](https://wiki.basho.com/display/RIAK/PBC+API).
 
-## Installation
-
-`clj-riak` is available as a Maven artifact from [Clojars](http://clojars.org/clj-riak):
-
-    :dependencies
-      [[org.clojars.ossareh/clj-riak "0.1.0-SNAPSHOT"] ...]
-
-## Usage
-
-For an introduction to the library, see the blog post [Exploring Riak with Clojure](http://mmcgrana.github.com/2010/08/riak-clojure.html)
-
 ## Differences in this fork
 
-Support for links
-    
+* Dependency updated to Clojure 1.3.0.
+* Dependency updated to the official Basho client com.basho.riak/riak-client "1.0.2-SNAPSHOT"
+
+I forked from org.clojars.ossareh/clj-riak "0.1.0-SNAPSHOT" which included support for links like so:
+
     ;; an example put fn
     (defn put [bucket key data]
       (let [links (or (:links (meta data)) '())
@@ -34,11 +26,16 @@ Support for links
                                       :key "bar"
                                       :tag "foobar"})}))
 
-## TODO
+## Installation
 
-In my personal projects there are a great deal of helper functions to
-make storing links / objects / etc significantly shorter than in the
-example above. I should try to roll them into this code.
+`clj-riak` is available as a Maven artifact from [Clojars](http://clojars.org/clj-riak):
+
+    :dependencies
+      [[org.clojars.shawncarnell/clj-riak "0.1.0-SNAPSHOT"] ...]
+
+## Usage
+
+For an introduction to the library, see the blog post [Exploring Riak with Clojure](http://mmcgrana.github.com/2010/08/riak-clojure.html)
 
 ## License
 

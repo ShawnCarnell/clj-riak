@@ -1,10 +1,10 @@
 (ns clj-riak.client
   "Clojure Riak client."
   (:refer-clojure :exclude (get))
-  (:require [clojure.contrib.json :as json])
-  (:import (com.trifork.riak RiakClient RiakObject RiakLink
-                             RequestMeta BucketProperties))
-  (:import (com.trifork.riak.mapreduce MapReduceResponse))
+  (:require [clojure.data.json :as json])
+  (:import (com.basho.riak.pbc RiakClient RiakObject RiakLink RequestMeta BucketProperties))  
+  (:import (com.basho.riak.pbc.mapreduce MapReduceResponse))
+  
   (:import (com.google.protobuf ByteString)))
 
 (defn init
