@@ -11,4 +11,6 @@
 	(client/ping rc)
   (println (client/get-server-info rc))
   (println (client/list-buckets rc))
+  (println (client/put rc "clj-riak-test1-bucket" "clj-riak-test1-key" {:value (.getBytes "clj-riak-test1-value")}))
+  (println (client/get rc "clj-riak-test1-bucket" "clj-riak-test1-key"))
 )

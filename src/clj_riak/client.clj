@@ -65,12 +65,12 @@
   {:vclock (.getVclock ro)
    :value (.toByteArray (.getValue ro))
    :content-type (.getContentType ro)
-   :charset (.getCharset ro)
-   :content-encoding (.getContentEncoding ro)
+;   :charset (.getCharset ro)  FIXME:  Why does this not link?
+;   :content-encoding (.getContentEncoding ro)  FIXME:  Why was this method removed?
    :vtag (.getVtag ro)
    :last-mod (.getLastModified ro)
-   :last-mod-usecs (.getLastModifiedUsec ro)
-   :user-meta (into {} (seq (.getUserMeta ro)))
+   :last-mod-usecs (.getLastModified ro)
+   :user-meta (into {} (seq (.getUsermeta ro)))
    :links (map parse-link (.getLinks ro))})
 
 (defn unparse-object [#^String bucket #^String key
